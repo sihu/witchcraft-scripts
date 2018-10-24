@@ -1,16 +1,21 @@
-var checkExist = setInterval(function() {
-   if (!!document.querySelector('.ref-group-list')) {
+// @include _config.js
+callIfEnabled('sentry.io', function() {
 
-      document.querySelectorAll('.event-annotation a').forEach(function(linkEl) {
-        if(linkEl.text === 'ruby') {
-          linkEl.style.color = 'red';
-          linkEl.style.fontWeight = 'bold';
-          linkEl.parentElement.style.border = '1px solid red';
-          linkEl.parentElement.style.padding = '0px 1px';
-        }
-      });
+  var checkExist = setInterval(function() {
+    if (!!document.querySelector('.ref-group-list')) {
 
-      clearInterval(checkExist);
-   }
-}, 100);
+        document.querySelectorAll('.event-annotation a').forEach(function(linkEl) {
+          if(linkEl.text === 'ruby') {
+            linkEl.style.color = 'red';
+            linkEl.style.fontWeight = 'bold';
+            linkEl.parentElement.style.border = '1px solid red';
+            linkEl.parentElement.style.padding = '0px 1px';
+          }
+        });
+
+        clearInterval(checkExist);
+    }
+  }, 100);
+
+});
 

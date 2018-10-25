@@ -1,5 +1,5 @@
 // @include _config.js
-callIfEnabled('ci.local.ch', function() {
+callIfEnabled('ruby-forum.com', function() {
 
   setTimeout(function(){
     let elem = document.querySelector('#discourse-modal.gate');
